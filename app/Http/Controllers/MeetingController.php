@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Meeting;
+use App\User;
 use Carbon;
 use JWTAuth;
 
@@ -30,7 +31,7 @@ class MeetingController extends Controller
         ];
         }
         $response = [
-            "message" => "Meetings",
+            "message" => "List of meetings",
             "meeting" => $meetings,
         ];
         return response()->json($response, 201);
@@ -49,12 +50,10 @@ class MeetingController extends Controller
             "title"=> "required",
             "description" => "required",
             "time" =>"required",
-            
-
         ]);
 
         if(! $user = JWTAuth::parseToken()->authenticate()){
-            return "Not found";
+            return response()->json("Unauthenticated! Log in first.");
         }
 
         $meeting = new Meeting;
@@ -66,7 +65,7 @@ class MeetingController extends Controller
         if($meeting->save()){
             $meeting->users()->attach($user->id);
             $meeting->view_meeting = [
-            "href" => "api" . "/v1/meeting/" . $meeting->id,
+            "href" => "api" . "/v1/meeting/".$meeting->id,
             "method" => "GET"
         ];
         $response = [
@@ -86,17 +85,26 @@ class MeetingController extends Controller
      */
     public function show($id)
     {
-        //
         
-        $meeting = Meeting::with('users')->where('id', $id)->firstOrFail();
+        $meeting = Meeting::find($id);
+        $user = $meeting->user_id;
+        $user_info = User::find($user);
+        $users = $meeting->users;
+        $attendants = '';
+        foreach ($users as $goer) {
+            # code...
+            $attendants = $goer->name;
+        }
         if($meeting != null){
             $meeting->view_meeting = [
                 "href" => "api/v1/meeting",
                 "method" => "GET, POST"
             ];
             $response = [
-                "message" => "Gotten it",
-                "meeting" => $meeting
+                "message" => "Details about the meeting",
+                "meeting" => $meeting,
+                'organizer' => $user_info->name,
+                'Registered for the meeting' => $attendants
             ];
             return response()->json($response, 201);
         }
@@ -121,7 +129,7 @@ class MeetingController extends Controller
 
         ]);
         if(!$user = JWTAuth::parseToken()->authenticate()){
-            return "Not found";
+            return response()->json(["message"=>"Unauthenticated"], 401);
         };
         $meeting = Meeting::find($id);
         if($meeting->user_id != $user->id){
@@ -133,13 +141,11 @@ class MeetingController extends Controller
         $meeting->time = $request["time"];
         $meeting->user_id = $user->id;
         $meeting->update();
-        // $meeting->view_detail = [
-        //     "href" => ''
-        // ]
+
         $response = [
             'message' => "Successfully updated",
             'meeting' => $meeting
-        ]
+    ];
         return response()->json($response, 201);
 
     }
@@ -155,13 +161,15 @@ class MeetingController extends Controller
         //
         $meeting = Meeting::find($id);
         if(! $user = JWTAuth::parseToken()->authenticate()){
-            return response()->json(['message' => 'Forbidden']);
+            return response()->json(["message"=>"Unauthenticated"], 401);
         }
         if($meeting->user_id != $user->id){
             return response()->json(['message'=>'Unauthorized action']);
         }
         $users = $meeting->users;
-        $meeting->users()->detach();
+        foreach ($users as $user) {
+            $meeting->users()->detach();
+        }
         if(!$meeting->delete()){
             foreach ($users as $user) {
                 $meeting->users()->attach($user);

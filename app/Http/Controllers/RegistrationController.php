@@ -19,12 +19,18 @@ class RegistrationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    //  public function index(){
+    //      $user = $user->id;
+
+
+    //  }
     public function store(Request $request)
     {
         //
 
         if(! $user = JWTAuth::parseToken()->authenticate()){
-            return "Not found";
+            return response()->json(["message"=>"Unauthenticated"], 401);
         }
         $this->validate($request, [
             'meeting_id' => 'required',
@@ -59,16 +65,6 @@ class RegistrationController extends Controller
     return response()->json($response, 201);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     
 
