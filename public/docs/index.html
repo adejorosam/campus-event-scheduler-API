@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>API Reference</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/all.js"></script>
+    <link rel="stylesheet" href="docs/css/style.css" />
+    <script src="docs/js/all.js"></script>
 
 
           <script>
@@ -48,442 +48,8 @@
 <p>Welcome to the generated API reference.
 <a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
 <!-- END_INFO -->
-<h1>general</h1>
-<!-- START_0c068b4037fb2e47e71bd44bd36e3e2a -->
-<h2>Authorize a client to access the user&#039;s account.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/oauth/authorize" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/authorize"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<blockquote>
-<p>Example response (500):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Server Error"
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET oauth/authorize</code></p>
-<!-- END_0c068b4037fb2e47e71bd44bd36e3e2a -->
-<!-- START_e48cc6a0b45dd21b7076ab2c03908687 -->
-<h2>Approve the authorization request.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost/oauth/authorize" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/authorize"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST oauth/authorize</code></p>
-<!-- END_e48cc6a0b45dd21b7076ab2c03908687 -->
-<!-- START_de5d7581ef1275fce2a229b6b6eaad9c -->
-<h2>Deny the authorization request.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/oauth/authorize" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/authorize"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE oauth/authorize</code></p>
-<!-- END_de5d7581ef1275fce2a229b6b6eaad9c -->
-<!-- START_a09d20357336aa979ecd8e3972ac9168 -->
-<h2>Authorize a client to access the user&#039;s account.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost/oauth/token" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/token"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST oauth/token</code></p>
-<!-- END_a09d20357336aa979ecd8e3972ac9168 -->
-<!-- START_d6a56149547e03307199e39e03e12d1c -->
-<h2>Get all of the authorized tokens for the authenticated user.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/oauth/tokens" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/tokens"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<blockquote>
-<p>Example response (401):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Unauthenticated."
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET oauth/tokens</code></p>
-<!-- END_d6a56149547e03307199e39e03e12d1c -->
-<!-- START_a9a802c25737cca5324125e5f60b72a5 -->
-<h2>Delete the given token.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/oauth/tokens/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/tokens/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE oauth/tokens/{token_id}</code></p>
-<!-- END_a9a802c25737cca5324125e5f60b72a5 -->
-<!-- START_abe905e69f5d002aa7d26f433676d623 -->
-<h2>Get a fresh transient token cookie for the authenticated user.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost/oauth/token/refresh" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/token/refresh"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST oauth/token/refresh</code></p>
-<!-- END_abe905e69f5d002aa7d26f433676d623 -->
-<!-- START_babcfe12d87b8708f5985e9d39ba8f2c -->
-<h2>Get all of the clients for the authenticated user.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/oauth/clients" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/clients"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<blockquote>
-<p>Example response (401):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Unauthenticated."
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET oauth/clients</code></p>
-<!-- END_babcfe12d87b8708f5985e9d39ba8f2c -->
-<!-- START_9eabf8d6e4ab449c24c503fcb42fba82 -->
-<h2>Store a new client.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost/oauth/clients" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/clients"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST oauth/clients</code></p>
-<!-- END_9eabf8d6e4ab449c24c503fcb42fba82 -->
-<!-- START_784aec390a455073fc7464335c1defa1 -->
-<h2>Update the given client.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost/oauth/clients/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/clients/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>PUT oauth/clients/{client_id}</code></p>
-<!-- END_784aec390a455073fc7464335c1defa1 -->
-<!-- START_1f65a511dd86ba0541d7ba13ca57e364 -->
-<h2>Delete the given client.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/oauth/clients/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/clients/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE oauth/clients/{client_id}</code></p>
-<!-- END_1f65a511dd86ba0541d7ba13ca57e364 -->
-<!-- START_9e281bd3a1eb1d9eb63190c8effb607c -->
-<h2>Get all of the available scopes for the application.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/oauth/scopes" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/scopes"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<blockquote>
-<p>Example response (401):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Unauthenticated."
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET oauth/scopes</code></p>
-<!-- END_9e281bd3a1eb1d9eb63190c8effb607c -->
-<!-- START_9b2a7699ce6214a79e0fd8107f8b1c9e -->
-<h2>Get all of the personal access tokens for the authenticated user.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/oauth/personal-access-tokens" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/personal-access-tokens"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<blockquote>
-<p>Example response (401):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Unauthenticated."
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET oauth/personal-access-tokens</code></p>
-<!-- END_9b2a7699ce6214a79e0fd8107f8b1c9e -->
-<!-- START_a8dd9c0a5583742e671711f9bb3ee406 -->
-<h2>Create a new personal access token for the user.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost/oauth/personal-access-tokens" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/personal-access-tokens"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST oauth/personal-access-tokens</code></p>
-<!-- END_a8dd9c0a5583742e671711f9bb3ee406 -->
-<!-- START_bae65df80fd9d72a01439241a9ea20d0 -->
-<h2>Delete the given token.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/oauth/personal-access-tokens/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/oauth/personal-access-tokens/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE oauth/personal-access-tokens/{token_id}</code></p>
-<!-- END_bae65df80fd9d72a01439241a9ea20d0 -->
+<h1>Meeting management</h1>
+<p>APIs for managing meetings</p>
 <!-- START_252941a151d9381a497ff9f4fcd7c736 -->
 <h2>api/v1/meeting</h2>
 <blockquote>
@@ -492,7 +58,9 @@ fetch(url, {
 <pre><code class="language-bash">curl -X GET \
     -G "http://localhost/api/v1/meeting" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/meeting"
 );
@@ -500,6 +68,8 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
 
 fetch(url, {
@@ -546,14 +116,18 @@ fetch(url, {
 <p><code>GET api/v1/meeting</code></p>
 <!-- END_252941a151d9381a497ff9f4fcd7c736 -->
 <!-- START_b5e43f5a2b64e1e585fb72d907fab038 -->
-<h2>Store a newly created resource in storage.</h2>
+<h2>api/v1/meeting</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "http://localhost/api/v1/meeting" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1" \
+    -d '{"title":"voluptate","description":"sapiente","time":"sint"}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/meeting"
 );
@@ -561,26 +135,68 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
+
+let body = {
+    "title": "voluptate",
+    "description": "sapiente",
+    "time": "sint"
+}
 
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/meeting</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the meeting.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>required</td>
+<td>The description of the meeting.</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>datetime</td>
+<td>required</td>
+<td>The time of the meeting.</td>
+</tr>
+</tbody>
+</table>
 <!-- END_b5e43f5a2b64e1e585fb72d907fab038 -->
 <!-- START_465fce8173591ce7fdcbfbb4c1692ba3 -->
-<h2>Display the specified resource.</h2>
+<h2>api/v1/meeting/{meeting}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "http://localhost/api/v1/meeting/1" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/meeting/1"
 );
@@ -588,6 +204,8 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
 
 fetch(url, {
@@ -597,23 +215,54 @@ fetch(url, {
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <blockquote>
-<p>Example response (500):</p>
+<p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "Server Error"
+    "message": "Details about the meeting",
+    "meeting": {
+        "id": 4,
+        "title": "Meeting to discuss strategy",
+        "description": "strategic discussion",
+        "time": "2016-01-15 00:00:00",
+        "user_id": 3,
+        "created_at": "2020-04-17T20:21:13.000000Z",
+        "updated_at": "2020-04-17T23:08:04.000000Z",
+        "view_meeting": {
+            "href": "api\/v1\/meeting",
+            "method": "GET, POST"
+        },
+        "users": [
+            {
+                "id": 3,
+                "name": "Samson Adejoro",
+                "email": "samsonadejoro@gmail.com",
+                "email_verified_at": null,
+                "created_at": "2020-04-17T19:01:35.000000Z",
+                "updated_at": "2020-04-17T19:01:35.000000Z",
+                "pivot": {
+                    "meeting_id": 4,
+                    "user_id": 3
+                }
+            }
+        ]
+    },
+    "organizer": "Samson Adejoro",
+    "Registered for the meeting": "Samson Adejoro"
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/v1/meeting/{meeting}</code></p>
 <!-- END_465fce8173591ce7fdcbfbb4c1692ba3 -->
 <!-- START_4c6db41d11a63735a162460a8eb0bfbc -->
-<h2>Update the specified resource in storage.</h2>
+<h2>api/v1/meeting/{meeting}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
     "http://localhost/api/v1/meeting/1" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/meeting/1"
 );
@@ -621,6 +270,8 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
 
 fetch(url, {
@@ -632,16 +283,35 @@ fetch(url, {
 <h3>HTTP Request</h3>
 <p><code>PUT api/v1/meeting/{meeting}</code></p>
 <p><code>PATCH api/v1/meeting/{meeting}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>required</td>
+<td>integer The ID of the meeting.</td>
+</tr>
+</tbody>
+</table>
 <!-- END_4c6db41d11a63735a162460a8eb0bfbc -->
 <!-- START_47918cf37e12dec2d31daaeb06093ab4 -->
-<h2>Remove the specified resource from storage.</h2>
+<h2>api/v1/meeting/{meeting}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
     "http://localhost/api/v1/meeting/1" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/meeting/1"
 );
@@ -649,6 +319,8 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
 
 fetch(url, {
@@ -659,16 +331,39 @@ fetch(url, {
     .then(json =&gt; console.log(json));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/v1/meeting/{meeting}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>required</td>
+<td>integer The ID of the meeting.</td>
+</tr>
+</tbody>
+</table>
 <!-- END_47918cf37e12dec2d31daaeb06093ab4 -->
+<h1>Registration management</h1>
+<p>APIs for managing registrations</p>
 <!-- START_d151775b4e8be5e781e4bfc1e9edd3f0 -->
-<h2>Store a newly created resource in storage.</h2>
+<h2>api/v1/registration</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "http://localhost/api/v1/registration" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1" \
+    -d '{"meeting_id":7}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/registration"
 );
@@ -676,26 +371,56 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
+
+let body = {
+    "meeting_id": 7
+}
 
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/registration</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meeting_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The meeting_id of the meeting.</td>
+</tr>
+</tbody>
+</table>
 <!-- END_d151775b4e8be5e781e4bfc1e9edd3f0 -->
 <!-- START_2e9ba3196765d9ac5c0b3e7501d08f64 -->
-<h2>Remove the specified resource from storage.</h2>
+<h2>api/v1/registration/{registration}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
     "http://localhost/api/v1/registration/1" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1" \
+    -d '{"meeting_id":13}'
+</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/registration/1"
 );
@@ -703,17 +428,45 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
+
+let body = {
+    "meeting_id": 13
+}
 
 fetch(url, {
     method: "DELETE",
     headers: headers,
+    body: body
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/v1/registration/{registration}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meeting_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The meeting_id of the meeting.</td>
+</tr>
+</tbody>
+</table>
 <!-- END_2e9ba3196765d9ac5c0b3e7501d08f64 -->
+<h1>User management</h1>
+<p>APIs for managing users</p>
 <!-- START_8ae5d428da27b2b014dc767c2f19a813 -->
 <h2>api/v1/register</h2>
 <blockquote>
@@ -722,7 +475,9 @@ fetch(url, {
 <pre><code class="language-bash">curl -X POST \
     "http://localhost/api/v1/register" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/register"
 );
@@ -730,6 +485,8 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
 
 fetch(url, {
@@ -738,6 +495,23 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "User created",
+    "user": {
+        "name": "Samson Adejoro",
+        "email": "samsonadejoro@gmail.com",
+        "updated_at": "2020-04-17T19:01:35.000000Z",
+        "created_at": "2020-04-17T19:01:35.000000Z",
+        "id": 3,
+        "view_users": {
+            "href": "api\/v1\/users",
+            "method": "GET"
+        }
+    }
+}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/register</code></p>
 <!-- END_8ae5d428da27b2b014dc767c2f19a813 -->
@@ -749,7 +523,9 @@ fetch(url, {
 <pre><code class="language-bash">curl -X POST \
     "http://localhost/api/v1/login" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/login"
 );
@@ -757,6 +533,8 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
 
 fetch(url, {
@@ -765,6 +543,10 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/login</code></p>
 <!-- END_8c0e48cd8efa861b308fc45872ff0837 -->
@@ -776,7 +558,9 @@ fetch(url, {
 <pre><code class="language-bash">curl -X GET \
     -G "http://localhost/api/v1/users" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/users"
 );
@@ -784,6 +568,8 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
 };
 
 fetch(url, {
@@ -802,15 +588,48 @@ fetch(url, {
             "id": 3,
             "name": "Samson Adejoro",
             "email": "samsonadejoro@gmail.com",
-            "email_verified_at": null,
-            "created_at": "2020-04-17T19:01:35.000000Z",
-            "updated_at": "2020-04-17T19:01:35.000000Z"
+            "email_verified_at": null
         }
     ]
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/v1/users</code></p>
 <!-- END_1aff981da377ba9a1bbc56ff8efaec0d -->
+<!-- START_8e370f8df2793730b7d1497cb3d3a38c -->
+<h2>api/v1/users/{id}</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/v1/users/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -H "Api-Version: v1"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+    "Api-Version": "v1",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/users/{id}</code></p>
+<!-- END_8e370f8df2793730b7d1497cb3d3a38c -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

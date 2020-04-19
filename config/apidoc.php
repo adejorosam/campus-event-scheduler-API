@@ -150,8 +150,8 @@ return [
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
-                    // 'Authorization' => 'Bearer {token}',
-                    // 'Api-Version' => 'v2',
+                    'Authorization' => 'Bearer {token}',
+                    'Api-Version' => 'v1',
                 ],
 
                 /*
@@ -164,7 +164,7 @@ return [
                      * API calls will be made only for routes in this group matching these HTTP methods (GET, POST, etc).
                      * List the methods here or use '*' to mean all methods. Leave empty to disable API calls.
                      */
-                    'methods' => ['GET'],
+                    'methods' => ['GET', 'POST', 'DELETE'],
 
                     /*
                      * Laravel config variables which should be set for the API call.

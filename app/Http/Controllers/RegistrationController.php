@@ -7,7 +7,14 @@ use App\Meeting;
 use App\User;
 use JWTAuth;
 
+/**
+    * @group Registration management
+    *
+    * APIs for managing registrations
+    */
+
 class RegistrationController extends Controller
+
 {
     
     public function __construct(){
@@ -20,14 +27,18 @@ class RegistrationController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  public function index(){
-    //      $user = $user->id;
+    /**
+        * @authenticated
+    */
 
-
-    //  }
+    /**
+        * @bodyParam meeting_id integer required The meeting_id of the meeting.
+        
+    */
     public function store(Request $request)
     {
         //
+        
 
         if(! $user = JWTAuth::parseToken()->authenticate()){
             return response()->json(["message"=>"Unauthenticated"], 401);
@@ -74,12 +85,24 @@ class RegistrationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+      /**
+            * @authenticated
+        */
+
+    /**
+        * @bodyParam meeting_id integer required The meeting_id of the meeting.
+        
+    */
+
+        
     public function destroy($id)
     {
         //
+        $user = JWTAuth::parseToken()->authenticate();
         $meeting = Meeting::find($id);
         $user = User::find($user->id);
-        if(! $user = JWTAuth::parseToken()->authenticate()){
+        if(! $user){
             return response()->json(['message' => 'Forbidden']);
         }
         
