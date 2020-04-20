@@ -50,9 +50,10 @@ class RegistrationController extends Controller
         $meeting_id = $request->input('meeting_id');
         $meeting = Meeting::find($meeting_id);
         $user = User::find($user_id);
-        // $meeting_id = Meeting::find($id);
 
-        // if($meeting_id ==)
+        if($meeting != null){
+            return response()->json(['message' => "This meeting doesn't exist or it has been deleted"], 404);
+        };
         
         $message = [
             'message' => 'User is already registered for the meeting',

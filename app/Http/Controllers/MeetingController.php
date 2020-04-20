@@ -114,9 +114,6 @@ class MeetingController extends Controller
 
     
 
-    /**
-        * @urlParam id integer required The ID of the meeting. Example: 1
-    */
     
     /**
     *@response
@@ -153,6 +150,10 @@ class MeetingController extends Controller
     *"Registered for the meeting": "Samson Adejoro"
 *}
 */
+    /**
+        * @urlParam id required The ID of the meeting. Example: 1
+    */
+    
     public function show($id)
     {
         $meeting = Meeting::find($id);
@@ -191,7 +192,7 @@ class MeetingController extends Controller
         * @authenticated
     */
     /**
-        * @urlParam id required integer The ID of the meeting. Example: 1
+        * @urlParam id required The ID of the meeting. Example: 1
     */
 
     
@@ -249,7 +250,7 @@ class MeetingController extends Controller
         * @authenticated
     */
     /**
-        * @urlParam id required integer The ID of the meeting. Example: 1
+        * @urlParam id required The ID of the meeting. Example: 1
     */
     public function destroy($id)
     {
