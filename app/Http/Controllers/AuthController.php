@@ -123,4 +123,30 @@ class AuthController extends Controller
     ];
     return response()->json($response, 201);
     }
+
+    public function update(Request $request){
+       
+
+        $this->validate($request, [
+            "name"=> "required",
+        ]);
+
+        $userInfo = JWTAuth::parseToken()->authenticate();
+
+        if(!$userInfo){
+            return response()->json(["message" => "Unauthenticated"], 401);
+        };
+
+        $user = User::find($userInfo->id);
+        $user->name = $request['name'];
+        $user->update();
+        $response = [
+            'message' => "Successfully updated",
+            'user' => $user
+    ];
+        return response()->json($response, 201);
+
+
+
+    }
 }
