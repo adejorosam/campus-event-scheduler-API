@@ -51,7 +51,7 @@ class RegistrationController extends Controller
         $meeting = Meeting::find($meeting_id);
         $user = User::find($user_id);
 
-        if($meeting != null){
+        if($meeting == null){
             return response()->json(['message' => "This meeting doesn't exist or it has been deleted"], 404);
         };
         
