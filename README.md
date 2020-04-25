@@ -5,7 +5,7 @@
 This is a simple API built to enable event planners and organizers plan ahead for their event and it also allows event attendants register for events they will be attending.
 
 ## Features
-Below are the features of my WEconnect app
+Below are the features of my Campus Event Scheduler app
 
 Organizers(user) can create event<br/>
 Organizers(user) can delete event<br/>
