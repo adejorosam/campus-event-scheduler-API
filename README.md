@@ -1,6 +1,5 @@
 # Campus Event Scheduler API
 
-[![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)]
 
 ## Application Description
 This is a simple API built to enable event planners and organizers plan ahead for their event and it also allows event attendants register for events they will be attending.
@@ -25,7 +24,7 @@ Visit [here](https://laravel.com/) for more information.
 
 
 ## Installation
-### Installation
+
 ```
 git clone https://github.com/samson1998/campus-event-scheduler-API.git
 
