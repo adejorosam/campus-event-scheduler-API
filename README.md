@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-An API written with meetup organizers in mind. It helps manage organization and scheduling of meetings. 
 
-Authentication : JWTAuth
-Language : Laravel
-=======
 # Campus Event Scheduler API
 
 
@@ -71,4 +66,4 @@ php -S 127.0.0.1:8080 -t public/
 
 
 </table>
->>>>>>> 0fd5b7f6eccedac1ec91186a5b13f0fc98d39c14
+
