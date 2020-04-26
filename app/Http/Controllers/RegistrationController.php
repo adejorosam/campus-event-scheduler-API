@@ -116,7 +116,7 @@ class RegistrationController extends Controller
         $meeting->users()->detach($user->id);
         $response = [
             'message' => 'User already un-registered',
-            'user' => $user,
+            'user' => $use,jr,
             'meeting' => $meeting,
             'register' => [
                 'href' => 'api/v1/registration/',

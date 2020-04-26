@@ -14,10 +14,7 @@ use JWTAuth;
     */
 class AuthController extends Controller
 {
-    
-
-    
-
+   
     public function users(){
         $users = User::all();
         $response = [
@@ -49,7 +46,6 @@ class AuthController extends Controller
 *}
 */
     public function register(Request $request){
-
 
         $this->validate($request, [
             'name'=> 'required',
@@ -125,8 +121,7 @@ class AuthController extends Controller
     }
 
     public function update(Request $request){
-       
-
+  
         $this->validate($request, [
             "name"=> "required",
         ]);
